@@ -11,14 +11,18 @@ import { Course } from '../model/course';
 export class CourseCardComponent implements OnInit {
 
   @Input()
-  course:Course
-
+  course: Course
+  
+  @Input()
+  cardIndex: number
+  
   @Output()
-  courseSelected = new  EventEmitter<Course>()
+  courseSelected = new EventEmitter<Course>()
+
 
   constructor() { }
 
-  ngOnInit(){
+  ngOnInit() {
   }
 
   onCourseViewed() {

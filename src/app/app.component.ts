@@ -21,10 +21,11 @@ export class AppComponent {
   //   this.data.title = newTitle
   // }
 
+courses = COURSES
 
-  coreCourse = COURSES[0]
-  rxjsCourse = COURSES[1]
-  ngrxCourse = COURSES[2]
+  // coreCourse = COURSES[0]
+  // rxjsCourse = COURSES[1]
+  // ngrxCourse = COURSES[2]
 
 
   onCourseSelected(course: Course) {
