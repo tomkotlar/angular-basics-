@@ -36,21 +36,22 @@ course-card {
     border-radius: 4px;
   }
   
-  course-card.is-first {
-    border-top: 2px solid grey;
+  .course-card.is-first {
+    border-top: 2px solid blueviolet;
     padding-top: 20px;
+    background-color: chartreuse;
   }
   
-  course-card.is-last {
+  .app-course-card.is-last {
     border-bottom: 2px solid grey;
     padding-top: 20px;
   }
   
-  course-card.is-even {
+  .app-course-card.is-even {
     background: lightgray;
   }
   
-  course-card.is-odd {
+  .app-course-card.is-odd {
     background: lightcyan;
   }
   
@@ -59,7 +60,7 @@ course-card {
   }
   
   .category {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     background: lightcyan;
     font-size: 14px;
     color: grey;
