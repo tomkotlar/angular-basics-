@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { COURSES } from 'src/db-data';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  data = {
-    title: 'angular-basics'
-  }
+  // data = {
+  //   title: 'angular-basics'
+  // }
 
-  onLogoClicked() {
-    alert('hello world') 
-  }
+  // onLogoClicked() {
+  //   alert('hello world') 
+  // }
 
-  onKeyUp(newTitle: string){
-    this.data.title = newTitle
-  }
+  // onKeyUp(newTitle: string){
+  //   this.data.title = newTitle
+  // }
+
+
+  coreCourse = COURSES[0]
+  rxjsCourse = COURSES[1]
+  ngrxCourse = COURSES[2]
  }
