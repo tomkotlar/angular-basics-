@@ -25,22 +25,29 @@ export class CourseCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  // @Output example emitter
   onCourseViewed() {
     console.log('clicked')
     this.courseSelected.emit(this.course)
   }
 
+  // ngIf else example
   isImageVisible() {
     return this.course && this.course.iconUrl
   }
 
+  //  [ngClass] example
   cardClasses() {
     //array or without braces string
     if (this.course.category === 'BEGINNER') {
       return ['beginner']
-
     }
     //object
     // return {'beginner': this.course.category === 'BEGINNER', }
+  }
+
+  // [ngStyle] example
+  cardStyle() {
+    return {'text-decoration': 'underline' }
   }
 }

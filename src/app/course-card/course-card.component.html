@@ -1,7 +1,9 @@
 <div class="course-card" *ngIf="course"
     [ngClass]="cardClasses()">
 
-    <div class="course-title">
+    <!-- [style.text-decoration]="'underline'"  -->
+    <!-- [ngStyle]="{'text-decoration': 'underline' }" -->
+    <div class="course-title" [ngStyle]="cardStyle()" >
  {{ cardIndex + ' ' + course.description }}
     </div>
     <img width="300" alt="Angular Logo" *ngIf="isImageVisible(); else noImage "
