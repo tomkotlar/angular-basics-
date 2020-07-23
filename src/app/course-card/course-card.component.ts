@@ -34,4 +34,13 @@ export class CourseCardComponent implements OnInit {
     return this.course && this.course.iconUrl
   }
 
+  cardClasses() {
+    //array or without braces string
+    if (this.course.category === 'BEGINNER') {
+      return ['beginner']
+
+    }
+    //object
+    // return {'beginner': this.course.category === 'BEGINNER', }
+  }
 }
