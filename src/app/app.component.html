@@ -2,6 +2,20 @@
     <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 </div>
 
+<div class="demo">
+    <div> Start Date: {{ startDate | date: 'MMM/dd/yyyy'  }}</div>
+    <div> Date Changer : {{dateChanger | date: 'MMM-yyyy'}}</div>
+    <div>{{title | uppercase}}</div>
+    <div>{{price | number}}</div>
+    <div>{{price | number: '3.3-5'}}</div>
+    <div>{{price | currency: 'GBP'}}</div>
+    <div>{{rate | percent}}</div>
+    <div>{{collection | slice:0:3}}</div>
+    <div *ngFor="let pair of course | keyvalue"  >
+
+     <b> Key value pair: </b>   {{ pair.key + ': ' + pair.value}}
+    </div>
+</div>
 
 <div class="courses">
     <app-course-card 
@@ -10,6 +24,7 @@
         [class.is-last]="isLast"
         (courseSelected)="onCourseSelected($event)" [course]="course"
         [cardIndex]="i + 1"
+        
        ></app-course-card>
    
 </div>
