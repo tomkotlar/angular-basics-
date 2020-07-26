@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { COURSES } from 'src/db-data';
 import { Course } from './model/course';
 import { CourseCardComponent } from './course-card/course-card.component';
@@ -8,7 +8,7 @@ import { CourseCardComponent } from './course-card/course-card.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  implements AfterViewInit{
 
   // data = {
   //   title: 'angular-basics'
@@ -61,14 +61,27 @@ course = COURSES[0]
 // card2: CourseCardComponent
 
 @ViewChild('cardRef1', {read: ElementRef})
-card: ElementRef
+card1: ElementRef
 
-@ViewChild('container')
-containerDiv: ElementRef;
+// @ViewChild('container')
+// containerDiv: ElementRef;
+
+@ViewChild('courseImage')
+courseImage: ElementRef;
+
+constructor() {
+  // console.log('card1', this.card1)
+}
+
+ngAfterViewInit() {
+  // console.log('card1', this.card1) checking when this  component is build in this lifecycle hook
+  // console.log('courseImage', this.courseImage) can't templat reference the child outside the template for exampe course-card
+
+}
 
   onCourseSelected(course: Course) {
-    //  console.log('card1', this.card)
-    // console.log('card2', this.card2)
-     console.log('containerDiv', this.containerDiv)
+      console.log('card1', this.card1)
+    //  console.log('card2', this.card2)
+    //  console.log('containerDiv', this.containerDiv)
   }
  }
