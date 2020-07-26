@@ -23,12 +23,12 @@
     </div>
 </div>
 
-<div class="courses">
-    <app-course-card 
+<div class="courses" #container>
+    <app-course-card #cardRef1
         (courseSelected)="onCourseSelected($event)" 
         [course]="courses[0]"></app-course-card>
 
-    <app-course-card 
+    <app-course-card #cardRef2
         (courseSelected)="onCourseSelected($event)" 
         [course]="courses[1]"></app-course-card>
    

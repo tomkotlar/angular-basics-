@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { COURSES } from 'src/db-data';
 import { Course } from './model/course';
 import { CourseCardComponent } from './course-card/course-card.component';
@@ -52,13 +52,23 @@ collection = ['one',  'two', 'three', 'four', 'five']
 course = COURSES[0]
 
 
-@ViewChild(CourseCardComponent)
-card: CourseCardComponent
+//View Child - multiple View Query Configuration Options
 
+// @ViewChild('cardRef1')
+// card1: CourseCardComponent
 
+// @ViewChild('cardRef2')
+// card2: CourseCardComponent
 
+@ViewChild('cardRef1', {read: ElementRef})
+card: ElementRef
+
+@ViewChild('container')
+containerDiv: ElementRef;
 
   onCourseSelected(course: Course) {
-    console.log(this.card)
+    //  console.log('card1', this.card)
+    // console.log('card2', this.card2)
+     console.log('containerDiv', this.containerDiv)
   }
  }
