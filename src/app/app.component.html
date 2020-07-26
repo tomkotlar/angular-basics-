@@ -29,8 +29,16 @@
         [course]="courses[0]"></app-course-card>
  </div> -->
 
-<div class="courses" #container>
+<!-- <div class="courses" #container>
     <app-course-card #cardRef1
         (courseSelected)="onCourseSelected($event)" 
         [course]="courses[1]"></app-course-card>
+ </div> -->
+
+<button (click)="onCourseEdited()" > Edit Cards </button> 
+
+<div class="courses" #container>
+    <app-course-card *ngFor=" let course of courses"
+        (courseSelected)="onCourseSelected($event)" 
+        [course]="course"></app-course-card>
  </div>
