@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { COURSES } from 'src/db-data';
 import { Course } from './model/course';
+import { CourseCardComponent } from './course-card/course-card.component';
 
 @Component({
   selector: 'app-root',
@@ -51,11 +52,13 @@ collection = ['one',  'two', 'three', 'four', 'five']
 course = COURSES[0]
 
 
+@ViewChild(CourseCardComponent)
+card: CourseCardComponent
 
 
 
 
   onCourseSelected(course: Course) {
-    console.log('App component', course)
+    console.log(this.card)
   }
  }

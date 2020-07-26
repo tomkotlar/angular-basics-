@@ -5,7 +5,7 @@
         <!-- [style.text-decoration]="'underline'"  -->
         <!-- [ngStyle]="{'text-decoration': 'underline' }" -->
         <div class="course-title" [ngStyle]="cardStyle()" >
-     {{ cardIndex + ' ' + course.description }}
+     {{ cardIndex || '' + ' ' + course.description }}
         </div>
         <img width="300" alt="Angular Logo" *ngIf="isImageVisible(); else noImage "
             [src]="course.iconUrl">
